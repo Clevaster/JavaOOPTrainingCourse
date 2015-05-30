@@ -1,1 +1,2 @@
-п
+omatically
+as written in file automatically

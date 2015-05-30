@@ -13,6 +13,10 @@ import java.io.IOException;
  * @author Alexander Tyshchenko.
  */
 public class DataIOStreamExample {
+/*    Удобные классы для чтения и записи типизированных данных в потоки:
+    java.io.DataInputStream
+    java.io.DataOutputStream
+*/
 
     public static void main(String[] args) {
         String path = Constants.FILE_PATH_LESSON_5 + "/DataIOStreamExample.dat";

@@ -25,9 +25,10 @@ public class FileExample {
         print(file.canRead() ? "is readable" : "is not readable");
         print("is " + (file.isDirectory() ? "" : "not" + " a directory"));
         print(file.isFile() ? "is normal file" : "might be a named pipe");
+
+        //File myFile = new File("C:\\MyFile.txt"); файл с параметром абсолютного пути
         print(file.isAbsolute() ? "is absolute" : "is not absolute");
         print("File last modified: " + file.lastModified());
         print("File size: " + file.length() + " Bytes");
     }
-
 }

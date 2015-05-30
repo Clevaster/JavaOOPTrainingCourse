@@ -12,12 +12,19 @@ import java.util.List;
  */
 public class FileSearcher {
 
+    //метод поиска файлов в заданой директории, и суффиксу
+    //возвращает абстракцию
     private static List<String> findFiles(String srcPath, String ext) throws IOException {
+        //директория
         File dir = new File(srcPath);
+
+        //.listFiles метод, возвращает списрк файлов из дериктории согласно фильтра
         File[] files = dir.listFiles(new MyFileFilter(ext));
 
+        //список для хранения значений, длинной в массив значений
         List<String> listFiles = new ArrayList<>(files.length);
 
+        //переписываем все пути в массив???????а чо?
         for (int i = 0; i < files.length; i++) {
             listFiles.add(srcPath + files[i].getName());
         }

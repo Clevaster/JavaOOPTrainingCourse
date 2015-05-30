@@ -13,10 +13,12 @@ public class PushbackInputStreamExample {
         String s = "if (a == 4) a = 0;\n";
         byte buf[] = s.getBytes();
         ByteArrayInputStream in = new ByteArrayInputStream(buf);
-        int c;
 
+        int c;
+        //создаем поток с возможностью отката, на основе ByteArrayInputStream
         try ( PushbackInputStream f = new PushbackInputStream(in) )
         {
+            //читаем пока не дочитаем
             while ((c = f.read()) != -1) {
                 switch(c) {
                     case '=':

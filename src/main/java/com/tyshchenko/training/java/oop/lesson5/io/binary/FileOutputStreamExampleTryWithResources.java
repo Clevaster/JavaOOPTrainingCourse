@@ -15,6 +15,8 @@ public class FileOutputStreamExampleTryWithResources {
         byte buf[] = source.getBytes();
 
         // Use try-with-resources to close the files.
+        //тут в () передаем наши потоки в try как ресурс
+
         try (FileOutputStream f0 = new FileOutputStream(Constants.FILE_PATH_LESSON_5 + "/FileOutputStreamExample.txt");
              FileOutputStream f1 = new FileOutputStream(Constants.FILE_PATH_LESSON_5 + "/FileOutputStreamExample.txt");
              FileOutputStream f2 = new FileOutputStream(Constants.FILE_PATH_LESSON_5 + "/FileOutputStreamExample.txt") )
