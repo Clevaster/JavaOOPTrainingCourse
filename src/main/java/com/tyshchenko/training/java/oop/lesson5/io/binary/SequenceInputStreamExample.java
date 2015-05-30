@@ -15,13 +15,17 @@ import java.util.Vector;
 public class SequenceInputStreamExample {
 
     public static void main(String[] args) {
+
         int c;
+        //создаем список вектор
         Vector<String> files = new Vector<>();
 
         files.addElement(Constants.FILE_PATH_LESSON_5 + "/file1.txt");
         files.addElement(Constants.FILE_PATH_LESSON_5 + "/file2.txt");
         files.addElement(Constants.FILE_PATH_LESSON_5 + "/file3.txt");
+
         InputStreamEnumerator ise = new InputStreamEnumerator(files);
+
         InputStream input = new SequenceInputStream(ise);
 
         try {
