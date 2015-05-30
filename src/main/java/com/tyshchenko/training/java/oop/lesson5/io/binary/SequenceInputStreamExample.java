@@ -13,6 +13,9 @@ import java.util.Vector;
  * @author Alexander Tyshchenko.
  */
 public class SequenceInputStreamExample {
+    //лияния содержимого нескольких файлов
+    // путем комбинирования нескольких входных потоков,
+    // связанных с файлами, в один выходной поток.
 
     public static void main(String[] args) {
 
@@ -20,6 +23,7 @@ public class SequenceInputStreamExample {
         //создаем список вектор
         Vector<String> files = new Vector<>();
 
+        //добавляем в него файлы
         files.addElement(Constants.FILE_PATH_LESSON_5 + "/file1.txt");
         files.addElement(Constants.FILE_PATH_LESSON_5 + "/file2.txt");
         files.addElement(Constants.FILE_PATH_LESSON_5 + "/file3.txt");
@@ -46,7 +50,10 @@ public class SequenceInputStreamExample {
 
 
     private static class InputStreamEnumerator implements Enumeration<FileInputStream> {
+        //расширяем Enumeration, чтобі иметь доступ к методам nextElement
+
         private Enumeration<String> files;
+
 
         public InputStreamEnumerator(Vector<String> files) {
             this.files = files.elements();

@@ -15,8 +15,12 @@ public class RandomAccessFileExample {
         byte[] buf = new byte[10];
 
         try (RandomAccessFile in = new RandomAccessFile(Constants.FILE_PATH_LESSON_5 + "/Random.txt", "rw")) {
+            //пропустить
             in.seek(100);
+
+            //записать
             in.write(buf);
+
             in.writeInt(7);
             in.writeChars("test chars");
             int x = in.readInt();

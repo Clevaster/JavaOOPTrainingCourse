@@ -16,6 +16,7 @@ public class CharArrayWriterExample {
         String s = "This should end up in the array";
         char buf[] = new char[s.length()];
 
+        //копируем символы из строки в массив символов
         s.getChars(0, s.length(), buf, 0);
 
         try {

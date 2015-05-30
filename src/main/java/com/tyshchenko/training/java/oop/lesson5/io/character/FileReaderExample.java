@@ -10,6 +10,8 @@ import java.io.IOException;
  */
 public class FileReaderExample {
 
+    // для чтения текстовых файлов
+
     public static void main(String[] args) {
         try ( FileReader reader = new FileReader(Constants.FILE_PATH_LESSON_5 + "/FileReaderExample.java") )
         {

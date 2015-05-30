@@ -10,6 +10,20 @@ import java.io.IOException;
  */
 public class FileWriterExample {
 
+   // используется для записи текстовых файлов.
+/*   FileWriter(File file)
+    FileWriter(File file, boolean append)
+    FileWriter(FileDescriptor fd)
+    FileWriter(String fileName)
+    FileWriter(String fileName, boolean append)
+
+     append = true; - дозаписать
+
+    Так, в конструктор передается либо путь к файлу в виде строки, либо объект File,
+    который ссылается на конкретный текстовый файл. Параметр append указывает,
+    должны ли данные дозаписываться в конец файла (если параметр равен true),
+    либо файл должен перезаписываться.*/
+
     public static void main(String[] args) {
         String source = "Test string";
         char buffer[] = new char[source.length()];
