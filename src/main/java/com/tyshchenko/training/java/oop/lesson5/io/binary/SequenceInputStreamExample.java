@@ -13,7 +13,7 @@ import java.util.Vector;
  * @author Alexander Tyshchenko.
  */
 public class SequenceInputStreamExample {
-    //лияния содержимого нескольких файлов
+    //слияния содержимого нескольких файлов
     // путем комбинирования нескольких входных потоков,
     // связанных с файлами, в один выходной поток.
 
@@ -28,8 +28,10 @@ public class SequenceInputStreamExample {
         files.addElement(Constants.FILE_PATH_LESSON_5 + "/file2.txt");
         files.addElement(Constants.FILE_PATH_LESSON_5 + "/file3.txt");
 
+        //поток последовательнотсей
         InputStreamEnumerator ise = new InputStreamEnumerator(files);
 
+        //потом слияния / на основе списка последовательностей / на основе вектора
         InputStream input = new SequenceInputStream(ise);
 
         try {

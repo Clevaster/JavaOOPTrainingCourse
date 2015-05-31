@@ -3,12 +3,11 @@ package com.tyshchenko.training.java.oop.lesson6;
 /**
  * @author Alexander Tyshchenko.
  */
-public class MyThreadExample2 {
+public class ThreadExample2 {
 
     public static void main(String[] args) {
         String name = "MyThread";
         Thread thread = new Thread(new MyThread(name), name);
-//        thread.setDaemon(true);
         thread.start();
     }
 
@@ -22,11 +21,6 @@ public class MyThreadExample2 {
 
         @Override
         public void run() {
-//            try {
-//                Thread.sleep(10000);
-//            } catch (InterruptedException e) {
-//                e.printStackTrace();
-//            }
             System.out.println("Thread " + name + " is running");
         }
     }

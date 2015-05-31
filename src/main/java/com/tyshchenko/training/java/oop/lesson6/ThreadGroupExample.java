@@ -2,25 +2,14 @@ package com.tyshchenko.training.java.oop.lesson6;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.IntStream;
 
 /**
  * @author Alexander Tyshchenko.
  */
-public class CounterThreadExample {
+public class ThreadGroupExample {
 
     public static void main(String[] args) {
         int threadsCount = 10;
-        CounterThread counter = new CounterThread("MyThreadCounter");
-        counter.start();
-
-        try {
-            Thread.sleep(5000);
-            counter.interrupt();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
         List<CounterThread> threads = new ArrayList<>(threadsCount);
 
         for (int i = 0; i < threadsCount; i++) {
@@ -30,30 +19,29 @@ public class CounterThreadExample {
         }
 
         // Java 8
-        IntStream.range(1, threadsCount).forEach(
-                (i) ->  {
-                    CounterThread thread = new CounterThread("MyThreadCounter" + i);
-                    threads.add(thread);
-                    thread.start();
-                }
-        );
-
+//        IntStream.range(1, 11).forEach(
+//                (a) ->  {
+//                    CounterThread thread = new CounterThread("MyThreadCounter" + a);
+//                    threads.add(thread);
+//                    thread.start();
+//                }
+//        );
+//
         // Java 8
-        IntStream.range(1, threadsCount).forEach((i) -> threads.add(CounterThread.getInstance("MyThreadCounter" + i)));
-
-        try {
-            Thread.sleep(5000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
-        for (CounterThread thread : threads) {
-            thread.interrupt();
-        }
-
-        // Java 8
-        threads.forEach((t) -> t.interrupt());
-
+//        IntStream.range(1, threadsCount).forEach((i) -> threads.add(CounterThread.getInstance("MyThreadCounter" + i)));
+//
+//        try {
+//            Thread.sleep(5000);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
+//
+//        for (CounterThread thread : threads) {
+//            thread.interrupt();
+//        }
+//
+//        // Java 8
+//        threads.forEach(t -> t.interrupt());
 
         ThreadGroup threadGroup = new ThreadGroup("MyThreadGroup");
 
@@ -69,8 +57,6 @@ public class CounterThreadExample {
         }
 
         threadGroup.interrupt();
-
-
     }
 
     private static final class CounterThread extends Thread {
@@ -84,7 +70,7 @@ public class CounterThreadExample {
         }
 
         public static CounterThread getInstance(String name) {
-            CounterThread thread =  new CounterThread(name);
+            CounterThread thread = new CounterThread(name);
             thread.start();
             return thread;
         }
@@ -103,6 +89,4 @@ public class CounterThreadExample {
             }
         }
     }
-
-
 }

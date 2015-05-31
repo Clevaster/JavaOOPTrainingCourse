@@ -8,7 +8,7 @@ import java.math.BigInteger;
 public class FactorialExample {
 
     public static void main(String[] args) {
-        FactorialCalculator calculator = new FactorialCalculator(new BigInteger("11000"), new Finish());
+        FactorialCalculator calculator = new FactorialCalculator(new BigInteger("20000"), new Finish());
         calculator.start();
         System.out.println("Done!");
     }
@@ -33,11 +33,11 @@ public class FactorialExample {
             this.finish = finish;
         }
 
-        private BigInteger fact(BigInteger x) {
-            if (x.equals(BigInteger.ZERO))
+        private BigInteger fact(BigInteger n) {
+            if (n.equals(BigInteger.ZERO))
                 return BigInteger.ONE;
             else
-                return x.multiply(fact(x.subtract(BigInteger.ONE)));
+                return n.multiply(fact(n.subtract(BigInteger.ONE)));
         }
 
         @Override
