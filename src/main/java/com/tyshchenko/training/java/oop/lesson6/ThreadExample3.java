@@ -6,6 +6,7 @@ package com.tyshchenko.training.java.oop.lesson6;
 public class ThreadExample3 {
 
     public static void main(String[] args) {
+
         Thread thread = new Thread(new Runnable() {
             @Override
             public void run() {
