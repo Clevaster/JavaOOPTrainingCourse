@@ -38,6 +38,7 @@ public class CopyFileWithProgressExample {
 
     public final static class Copy extends Thread {
 
+        //размер блока
         private static final int BLOCK_SIZE = 24;
 
         private String src;
